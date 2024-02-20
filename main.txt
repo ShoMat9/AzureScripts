@@ -1,0 +1,10 @@
+Get-command *AzAccount* -Module *Az*
+
+Login-AzAccount
+
+Connect-AzAccount -UseDeviceAuthentication
+https://microsoft.com/devicelogin
+
+$PSVersionTable
+
+Set-AzContext -SubscriptionName sub
