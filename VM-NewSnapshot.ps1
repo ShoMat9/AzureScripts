@@ -1,7 +1,7 @@
-# Creates new snapshots for OS disk & multiple Data disks.
 # You know what to modify
 
 Set-AzContext -SubscriptionName SUB1 ; $VmResourceGroup = "RG1"; $VmName = "VM1" 
+
 #####################################
 $vm = get-azvm -Name $VmName -ResourceGroupName $VmResourceGroup
 $snapshotdisk = $vm.StorageProfile
