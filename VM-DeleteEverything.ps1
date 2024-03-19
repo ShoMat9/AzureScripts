@@ -4,7 +4,7 @@ $subscriptionName = sub1
 $vmNames = "abc", "pqr", "xyz"
 
 #######################################################
-Select-AzSubscription $subscriptionName
+Select-AzSubscription  $subscriptionName
 
 foreach ($vmName in $vmNames) {
 
