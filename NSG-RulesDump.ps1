@@ -1,11 +1,12 @@
-Set-AzContext -SubscriptionName Sub   <# Change Subscription Name /#>
-$nsgname = "myNSG" <# Change NSG Name /#>
-$ShoReport = Get-Date -UFormat "C:\X-Sho\Scripts\Reports\NSG-rules-%Y%b%d@%I%M%p.csv" <# Change Output Location /#>
+## You know what to edit!!
 
+$SubscriptionName = "sub1" 
+$nsgname = "myNSG" 
+$ShoReport = Get-Date -UFormat "C:\X-Sho\Scripts\Reports\NSG-rules-%Y%b%d@%I%M%p.csv" 
+
+Set-AzContext -SubscriptionName $SubscriptionName
 $outputfinal=@()
 $nsg=Get-AzNetworkSecurityGroup -Name $nsgname
-
-
 $securityrules=$nsg.SecurityRules
 foreach ($securityrule in $securityrules)
 {
@@ -25,6 +26,5 @@ $outputtemp.Action=$securityrule.Access
 $outputtemp.Description=$securityrule.Description
 $outputfinal += $outputtemp
 }
-
 
 $outputfinal | Export-Csv -Path $ShoReport -NoTypeInformation
