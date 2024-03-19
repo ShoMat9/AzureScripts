@@ -1,5 +1,4 @@
-## Dirty but Quick script to get the dates when VMs were created in Azure.
-## You know what to edit!!
+# You know what to edit :)
 
 Select-AzSubscription -SubscriptionName sub1
 
