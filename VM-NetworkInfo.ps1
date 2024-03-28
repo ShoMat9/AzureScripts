@@ -4,7 +4,7 @@ $resourceGroupName = "RG Name"
 $vmName = "VM1","VM2","VM3"
 $ShoReport = Get-Date -UFormat "C:\Reports\VM-NSG-x-%Y%b%d@%I%M%p.html"
 
-#####################################################
+######################################################
 $ShoStyle = "<style>
 TABLE {border-width: 1px;border-style: solid;border-color: black;border-collapse: collapse;Font-Size: 8pt;Font-Family: Tahoma, sans-serif;}
 TH {border-width: 1px;padding: 3px;border-style: solid;border-color: black;background-color: #bc64ed;}
@@ -21,4 +21,4 @@ $report +=  Get-AzVM -ResourceGroupName $resourceGroupName -Name $vm1 | Select N
 }
 
 $report | ConvertTo-Html -head $ShoStyle | out-file $ShoReport
-#####################################################
+######################################################
